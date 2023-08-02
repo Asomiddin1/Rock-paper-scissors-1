@@ -1,0 +1,257 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(216, 216, 216);
+    border-radius: 40px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: black;
+}
+
+.container {
+    display: flex;
+    padding: 50px 250px;
+    gap: 100px;
+}
+
+.vs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.text_title {
+    margin-top: 50px;
+    text-shadow: 0 0 20px #fff,
+        0 0 50px white,
+        0 0 100px white,
+        0 0 500px white;
+    text-align: center;
+
+    color: #fff;
+    box-shadow: 0 0 70px 1px rgb(24, 155, 144), 0 0 10px 1px rgb(255, 255, 255),
+        inset 0 0 10px rgb(154, 248, 255);
+    border-radius: 50px;
+}
+
+#player {
+    width: 400px;
+    height: 350px;
+    color: white;
+    box-shadow: 0 0 70px 1px rgb(44, 7, 225), 0 0 10px 1px rgb(0, 181, 178),
+        inset 0 0 10px rgb(2, 59, 246);
+    border-radius: 50px;
+}
+
+#player h1 {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 40px;
+
+}
+
+#player div {
+    display: flex;
+    padding-top: 70px;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* icons */
+i {
+    margin: 0 18px;
+    animation-name: beat;
+    animation-duration: .5s;
+    animation-delay: .3s;
+    animation-iteration-count: 3;
+}
+
+@keyframes beat {
+
+    0%,
+    100% {
+        transform: rotate(45deg);
+        scale: 1.2;
+    }
+
+    50% {
+        transform: rotate(-45deg);
+        scale: .8;
+    }
+}
+
+i {
+    transition: 0.5s;
+}
+
+i:hover {
+    scale: 1.5;
+    color: red;
+}
+
+#computer {
+    width: 400px;
+    height: 350px;
+    color: white;
+
+    box-shadow: 0 0 70px 1px rgb(249, 3, 3), 0 0 10px 1px rgba(181, 0, 51, 0.826),
+        inset 0 0 10px rgb(246, 2, 2);
+    border-radius: 50px;
+}
+
+#computer h1 {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 40px;
+}
+
+#computer div {
+    display: flex;
+    padding-top: 70px;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Result */
+#box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 130px;
+}
+
+.box-2 {
+    display: flex;
+    justify-content: center;
+    gap: 250px;
+    padding: 0px 20px;
+}
+
+.result {
+    width: 700px;
+    height: 130px;
+    background-color: white;
+    border-radius: 20px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+#winner {
+    font-size: 27px;
+    font-weight: 700;
+    padding-top: 30px;
+    text-align: center;
+}
+
+/* modal */
+#modal_div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal_div div {
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    box-shadow: 5px 5px 11px black;
+    padding: 50px 10px;
+    border-radius: 15px;
+}
+
+.modal_text {
+    text-align: center;
+    color: green;
+}
+.hidden{
+    display: none;
+}
+.block{
+    display: block;
+}
+
+#modal_2  form {
+    text-align: center;
+    margin-top: 50px;
+}
+#modal_2 form button {
+    padding: 6px 10px;
+    font-size: 17px;
+    color: white;
+    background: red;
+    border: none;
+    border-radius: 7px; 
+}
+/* media query */
+
+@media screen and (max-width:605px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        transform: rotate(180deg);
+        justify-content: center;
+        align-items: center;
+    }
+
+    #player{
+        transform: rotate(180deg);
+        width: 300px;
+        height: 300px;
+    }
+    #computer{
+        transform: rotate(180deg);
+        width: 300px;
+        height: 300px;
+    }
+ 
+    .vs {
+        transform: rotate(180deg);
+    }
+
+    .result {
+        width: 330px;
+        margin-bottom: 30px;
+    }
+
+    .box-2 {
+        gap: 60px;
+    }
+
+}
+
+
+@media screen and (max-width:375px) {
+    #player , #computer{
+        width: 250px;
+        height: 300px;
+    }
+    i{
+        font-size: 1px;
+    }
+    body{
+        background-color: aqua;
+    }
+}
